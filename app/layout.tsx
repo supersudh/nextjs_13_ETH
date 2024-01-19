@@ -1,4 +1,5 @@
 import React from 'react';
+import { HEAD } from './components/HEAD';
 
 export default function RootLayout({
   children,
@@ -7,6 +8,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <HEAD />
       <body>{children}</body>
     </html>
   )

@@ -1,5 +1,10 @@
-import React from 'react';
+import DashboardContainer from './containers/DashboardContainer';
+import { AppContextProvider } from './lib/state-management';
 
 export default function Page() {
-  return <h1>Hello, Next.js!</h1>;
+  return (
+    <AppContextProvider>
+      <DashboardContainer />
+    </AppContextProvider>
+  );
 }

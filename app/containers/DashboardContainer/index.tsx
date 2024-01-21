@@ -18,7 +18,6 @@ export default function DashboardContainer() {
     <WagmiProvider config={wagmiConfig}>
       <QueryClientProvider client={queryClient}>
         <div id="dashboardContainer">
-          <div>Dashboard Container</div>
           <ConnectWalletDynamic />
           <DashboardDynamic />
         </div>

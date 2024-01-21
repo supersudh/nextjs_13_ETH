@@ -4,7 +4,6 @@ import {
   useDisconnect,
   useEnsAvatar,
   useEnsName,
-  // useBalance
 } from 'wagmi';
 
 import {
@@ -15,6 +14,8 @@ import {
   lineaTestnet,
   Chain
 } from 'wagmi/chains';
+
+import Button from '@mui/material/Button';
 
 function ChainDetails({
   chain,
@@ -47,7 +48,7 @@ function ChainDetails({
         break;
     }
   }
-  return <div>Chain: {chainName}</div>
+  return <div>Chain: <b>{chainName}</b></div>
 }
 
 export default function Profile() {
@@ -59,10 +60,16 @@ export default function Profile() {
   return (
     <div>
       {ensAvatar && <img alt="ENS Avatar" src={ensAvatar} />}
-      {/* {chain?.id && <div>Chain: {chain.name}</div>} */}
       <ChainDetails chain={chain} chainId={chainId} />
-      {address && <div>{ensName ? `${ensName} (${address})` : `Address: ${address}`}</div>}
-      <button onClick={() => disconnect()}>Disconnect</button>
+      <div>Address: <b>{address}</b></div>
+      <Button
+        variant="outlined"
+        color="error"
+        onClick={() => disconnect()}
+        style={{ margin: '0.75rem 0' }}
+      >
+        Disconnect
+      </Button>
     </div>
   );
 }

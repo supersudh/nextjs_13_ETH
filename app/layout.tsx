@@ -1,4 +1,7 @@
 import React from 'react';
+
+import './styles/global.scss';
+
 import { HEAD } from './components/HEAD';
 
 export default function RootLayout({

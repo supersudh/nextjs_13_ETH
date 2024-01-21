@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from 'react';
 import { Connector, useConnect } from 'wagmi';
+import Button from '@mui/material/Button';
 
 function WalletOption({
   connector,
@@ -19,9 +20,9 @@ function WalletOption({
   }, [connector])
 
   return (
-    <button disabled={!ready} onClick={onClick}>
+    <Button disabled={!ready} onClick={onClick} variant="contained" color="primary" style={{ margin: '0.25rem' }}>
       {connector.name}
-    </button>
+    </Button>
   );
 }
 

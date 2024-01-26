@@ -1,21 +1,87 @@
-const nextJest = require('next/jest')
- 
-/** @type {import('jest').Config} */
+//V3
+const nextJest = require("next/jest");
+
 const createJestConfig = nextJest({
   // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
-  dir: './',
-})
- 
+  dir: "./",
+});
+
 // Add any custom config to be passed to Jest
-const config = {
-  coverageProvider: 'v8',
-  testEnvironment: 'jsdom',
-  // Add more setup options before each test is run
-  // setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
-}
- 
+const customJestConfig = {
+  // setupFilesAfterEnv: ["./jest.setup.js"],
+  testEnvironment: "jsdom"
+};
+
+const esModules = [
+  '@wagmi',
+  'wagmi',
+  'preact',
+  'isows'
+].join('|');
+
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
-module.exports = createJestConfig(config);
+module.exports = async () => ({
+  ...(await createJestConfig(customJestConfig)),
+  coverageProvider: 'v8',
+  transformIgnorePatterns: [`node_modules/(?!${esModules})`],
+  preset: 'ts-jest',
+  testEnvironment: 'jsdom',
+  transform: {
+    "^.+\\.tsx?$": "ts-jest",
+    '^.+\\.[tj]s$': [
+      'ts-jest',
+      {
+        tsconfig: '<rootDir>/tsconfig.json'
+      }
+    ]
+  },
+  "moduleFileExtensions": [
+    "ts",
+    "tsx",
+    "js"
+  ],
+});
+
+// V2
+// const nextJest = require('next/jest')
+
+// /** @type {import('jest').Config} */
+// const createJestConfig = nextJest({
+//   // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
+//   dir: './',
+// })
+
+// // Add any custom config to be passed to Jest
+
+// const esModules = [
+//   'wagmi',
+//   'viem'
+// ].join('|');
+// const config = {
+//   coverageProvider: 'v8',
+//   testEnvironment: 'jsdom', 
+//   presets: [
+//     ['@babel/preset-env', { targets: { node: 'current' } }],
+//     '@babel/preset-typescript',
+//   ],
+//   // transformIgnorePatterns: [`/node_modules/(?!${esModules})`],
+//   transformIgnorePatterns: ['node_modules/wagmi', 'node_modules/viem'],
+//   transform: {
+//     '^.+\\.ts?$': ['ts-jest', { isolatedModules: true, useESM: true }],
+//     '^.+\\.tsx?$': [
+//       'ts-jest',
+//       { useESM: true, tsconfig: { jsx: 'react-jsx' } }
+//     ],
+//     '^.+\\.jsx?$': require.resolve('babel-jest')
+//   },
+//   // Add more setup options before each test is run
+//   // setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+// }
+
+// createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
+// module.exports = createJestConfig(config);
+
+// V1
 
 // /**
 //  * For a detailed explanation regarding each configuration property, visit:

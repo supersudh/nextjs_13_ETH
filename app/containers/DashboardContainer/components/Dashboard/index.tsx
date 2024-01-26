@@ -1,6 +1,8 @@
 "use client";
 import { useEffect } from 'react';
-import { useAccount, useChainId } from 'wagmi'
+import { useAccount } from 'wagmi'
+
+import './Dashboard.scss';
 
 import { setActiveAddress, setActiveChain, setIsConnectedToBlockchain, setTransactions, useAppContext } from "../../../../lib/state-management";
 import DataTable from '../../../../components/DataTable';

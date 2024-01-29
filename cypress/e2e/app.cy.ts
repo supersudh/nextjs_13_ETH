@@ -1,13 +1,17 @@
-import { MESSAGES } from "../../test-utils/constants";
-
 const HOSTNAME = Cypress.env('host');
 
-describe('Navigation', () => {
-  it('should navigate to the about page', () => {
-    // Start from the index page
-    cy.visit(HOSTNAME);
- 
-    // The new page should contain an h1 with "GREETING TEXT"
-    cy.get('h1').contains(MESSAGES.GREETING);
-  });
+describe('Application', () => {
+  it(
+    'should navigate to the root page, connect to a wallet and automatically display the transactions data',
+    () => {
+      cy.visit(HOSTNAME);
+      it("should connect wallet with success", () => {
+        cy.get("#connect-btn-MetaMask").click();
+        cy.acceptMetamaskAccess();
+        cy.get('[data-cy="addressInfo"]').should(
+          "have.text",
+          process.env.TEST_ADDRESS
+        );
+      });
+    });
 })

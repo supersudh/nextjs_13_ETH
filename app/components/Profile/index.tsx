@@ -1,4 +1,5 @@
 "use client";
+import React from 'react';
 import {
   useAccount,
   useDisconnect,
@@ -48,7 +49,7 @@ function ChainDetails({
         break;
     }
   }
-  return <div>Chain: <b>{chainName}</b></div>
+  return <div data-testid="chainInfo">Chain: <b>{chainName}</b></div>
 }
 
 export default function Profile() {
@@ -56,12 +57,16 @@ export default function Profile() {
   const { disconnect } = useDisconnect();
   const { data: ensName } = useEnsName({ address });
   const { data: ensAvatar } = useEnsAvatar({ name: ensName! });
-
   return (
     <div>
       {ensAvatar && <img alt="ENS Avatar" src={ensAvatar} />}
       <ChainDetails chain={chain} chainId={chainId} />
-      <div>Address: <b>{address}</b></div>
+      <div
+        data-testid="addressInfo"
+        data-cy="addressInfo"
+      >
+        Address: <b>{address}</b>
+      </div>
       <Button
         variant="outlined"
         color="error"

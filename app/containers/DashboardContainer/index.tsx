@@ -4,6 +4,8 @@ import dynamic from 'next/dynamic';
 import { WagmiProvider } from 'wagmi';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
+import './DashboardContainer.scss';
+
 import { wagmiConfig } from '../../helpers/wagmi.config';
 import { useAppContext } from '../../lib/state-management';
 
@@ -17,7 +19,7 @@ export default function DashboardContainer() {
   return (
     <WagmiProvider config={wagmiConfig}>
       <QueryClientProvider client={queryClient}>
-        <div id="dashboardContainer">
+        <div id="DashboardContainer">
           <ConnectWalletDynamic />
           <DashboardDynamic />
         </div>

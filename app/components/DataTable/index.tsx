@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { DataGrid, DataGridProps } from '@mui/x-data-grid';
 import Link from '@mui/material/Link';
 
@@ -23,7 +23,11 @@ export default function DataTable(
   const [pageSize, setPageSize] = useState(10);
 
   if (transactions.length === 0) {
-    return <p>Loading Transactions</p>;
+    return (
+      <div className="DataTableMainContainer" data-testid="dataTableMainContainer">
+        <p className="loading-text" data-testid="loadingMessage">Loading Transactions...</p>
+      </div>
+    );
   }
 
   const dataGridObject: DataGridProps = {

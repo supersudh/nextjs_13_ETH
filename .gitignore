@@ -4,3 +4,5 @@ package-lock.json
 coverage
 cypress.env.json
 .env.local
+.DS_Store
+.env.test

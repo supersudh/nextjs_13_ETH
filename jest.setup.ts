@@ -1,6 +1,10 @@
+import { loadEnvConfig } from '@next/env';
 import { TextEncoder, TextDecoder } from 'util';
 import '@testing-library/jest-dom';
-// import "@inrupt/jest-jsdom-polyfills";
 
 global.TextEncoder = TextEncoder;
 global.TextDecoder = TextDecoder;
+(async () => {
+  const projectDir = process.cwd();
+  loadEnvConfig(projectDir);
+})();

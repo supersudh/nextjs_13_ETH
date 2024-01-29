@@ -1,0 +1,29 @@
+export const transfersMockData: any[] = [
+  {
+    "wallet": {
+      "address": "0x96a8cebb78dc9e94486130cbc845365ca0e9cb31"
+    },
+    "block": {
+      "timestamp": {
+        "time": "2023-01-15 14:48:23"
+      },
+      "height": 16412897
+    },
+    "address": {
+      "address": "0x1c6a361dda5084f27093212bc3484326c738c458",
+      "annotation": null,
+      "smartContract": {
+        "contractType": null
+      }
+    },
+    "currency": {
+      "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "symbol": "USDT",
+      "tokenType": "ERC20"
+    },
+    "amount": 100,
+    "transaction": {
+      "hash": "0x92cc86b799b1b5e6e3bfcf492a0bb3e7c40adb09c1e238b9decd5aaae3398785"
+    }
+  }, { "wallet": { "address": "0x1c6a361dda5084f27093212bc3484326c738c458" }, "block": { "timestamp": { "time": "2023-01-15 14:45:35" }, "height": 16412883 }, "address": { "address": "0x56eddb7aa87536c09ccc2793473599fd21a8b17f", "annotation": null, "smartContract": { "contractType": null } }, "currency": { "address": "-", "symbol": "ETH", "tokenType": "" }, "amount": 0.010125190158897146, "transaction": { "hash": "0xbf740f2ba4fb11d624a71a74e9aadd58093b3c4bd8fcb39a748a95d5e8dff63b" } }, { "wallet": { "address": "0x96a8cebb78dc9e94486130cbc845365ca0e9cb31" }, "block": { "timestamp": { "time": "2021-12-25 10:13:36" }, "height": 13873710 }, "address": { "address": "0x1c6a361dda5084f27093212bc3484326c738c458", "annotation": null, "smartContract": { "contractType": null } }, "currency": { "address": "-", "symbol": "ETH", "tokenType": "" }, "amount": 0.10038982792200485, "transaction": { "hash": "0x6de06401258b6a890a50b00eaba226694370d47bf0a8af0624b836d30af742b2" } }, { "wallet": { "address": "0x1c6a361dda5084f27093212bc3484326c738c458" }, "block": { "timestamp": { "time": "2021-07-30 06:11:20" }, "height": 12925330 }, "address": { "address": "0x08e663116d4e3f7867a687c85b433d340ed58a3f", "annotation": null, "smartContract": { "contractType": null } }, "currency": { "address": "-", "symbol": "ETH", "tokenType": "" }, "amount": 0.0994334963877169, "transaction": { "hash": "0x58515154ffe2ae5641583da1c81d3d0daa451830121c6b2af109c13225b1299e" } }, { "wallet": { "address": "0x96a8cebb78dc9e94486130cbc845365ca0e9cb31" }, "block": { "timestamp": { "time": "2021-07-29 12:24:43" }, "height": 12920709 }, "address": { "address": "0x1c6a361dda5084f27093212bc3484326c738c458", "annotation": null, "smartContract": { "contractType": null } }, "currency": { "address": "0xdac17f958d2ee523a2206206994597c13d831ec7", "symbol": "USDT", "tokenType": "ERC20" }, "amount": 1800, "transaction": { "hash": "0x6d8aee67fd52181dd4d52b281c4f0b937cb2ef7f69438702886b3be71be3ed1c" } }, { "wallet": { "address": "0x96a8cebb78dc9e94486130cbc845365ca0e9cb31" }, "block": { "timestamp": { "time": "2021-07-29 12:11:21" }, "height": 12920642 }, "address": { "address": "0x1c6a361dda5084f27093212bc3484326c738c458", "annotation": null, "smartContract": { "contractType": null } }, "currency": { "address": "0xdac17f958d2ee523a2206206994597c13d831ec7", "symbol": "USDT", "tokenType": "ERC20" }, "amount": 100, "transaction": { "hash": "0xc6ae2ae6b86711b47a4742f287b319d0b97b704bb8b2c45bbe5c3a9db6767dab" } }, { "wallet": { "address": "0x1c6a361dda5084f27093212bc3484326c738c458" }, "block": { "timestamp": { "time": "2021-07-29 10:57:10" }, "height": 12920333 }, "address": { "address": "0x618ffd1cdabee36ce5992a857cc7463f21272bd7", "annotation": null, "smartContract": { "contractType": null } }, "currency": { "address": "-", "symbol": "ETH", "tokenType": "" }, "amount": 0.005000000078466254, "transaction": { "hash": "0x39194a2eb4062214656903b9a34d6dbbcee6d499b702395bfa87abc039bf6978" } }, { "wallet": { "address": "0x1c6a361dda5084f27093212bc3484326c738c458" }, "block": { "timestamp": { "time": "2021-07-22 14:07:27" }, "height": 12876645 }, "address": { "address": "0x2faf487a4414fe77e2327f0bf4ae2a264a776ad2", "annotation": "FTX Exchange, FTX", "smartContract": { "contractType": null } }, "currency": { "address": "0xdac17f958d2ee523a2206206994597c13d831ec7", "symbol": "USDT", "tokenType": "ERC20" }, "amount": 2000, "transaction": { "hash": "0x09a302823fdf78d81d4ccfc40e40d4b4d3656c1dbe506938d083cfeb3963dd0c" } }, { "wallet": { "address": "0xef9355fc024366a41d23c72685062a45d12c2bb7" }, "block": { "timestamp": { "time": "2021-04-27 04:09:44" }, "height": 12320153 }, "address": { "address": "0x1c6a361dda5084f27093212bc3484326c738c458", "annotation": null, "smartContract": { "contractType": null } }, "currency": { "address": "-", "symbol": "ETH", "tokenType": "" }, "amount": 3.5668095959748367, "transaction": { "hash": "0x927352c110366a1684c23b029ace9792ca45a960f640cec45331c07d362219e8" } }, { "wallet": { "address": "0xef9355fc024366a41d23c72685062a45d12c2bb7" }, "block": { "timestamp": { "time": "2021-04-27 04:04:42" }, "height": 12320130 }, "address": { "address": "0x1c6a361dda5084f27093212bc3484326c738c458", "annotation": null, "smartContract": { "contractType": null } }, "currency": { "address": "-", "symbol": "ETH", "tokenType": "" }, "amount": 0.010000000156932509, "transaction": { "hash": "0x821087297a128aaa8cef647cb058a1bc1d388361375cdcc6daab5e1e4267e49a" } }, { "wallet": { "address": "0x1c6a361dda5084f27093212bc3484326c738c458" }, "block": { "timestamp": { "time": "2021-02-04 02:39:27" }, "height": 11787114 }, "address": { "address": "0x68a828ad889301992cf1d165f1b392ef41c01d22", "annotation": null, "smartContract": { "contractType": null } }, "currency": { "address": "-", "symbol": "ETH", "tokenType": "" }, "amount": 3.5783215961554973, "transaction": { "hash": "0xafd5573ef1525c055fa20e3a5b48696cb0052615eb49ee3c5e8e6ba697487aee" } }
+];

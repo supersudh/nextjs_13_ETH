@@ -3,7 +3,7 @@ import { APP_CONSTANTS } from './constants';
 export interface AppState {
   isConnectedToBlockchain: boolean;
   activeAddress: string;
-  activeChain: number | string;
+  activeChain: undefined | number | string;
   activeToken: string;
   transactions: any[];
 }

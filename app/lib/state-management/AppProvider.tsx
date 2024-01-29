@@ -1,5 +1,5 @@
 "use client";
-import {
+import React, {
   createContext,
   Dispatch,
   useContext,
@@ -13,9 +13,17 @@ import appReducer from './reducer';
 const AppContext = createContext<AppState | undefined>(undefined);
 const AppDispatchContext = createContext<Dispatch<AppActionType> | undefined>(undefined);
 
+interface AppContextProviderProps {
+  children: JSX.Element;
+  customInitialState?: AppState;
+}
+
 // The AppContextProvider that takes children consuming context
-export const AppContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(appReducer, initialAppState);
+export const AppContextProvider = ({
+  children,
+  customInitialState = undefined // customInitialState for testing purposes
+}: AppContextProviderProps) => {
+  const [state, dispatch] = useReducer(appReducer, customInitialState || initialAppState);
   return (
     <AppContext.Provider value={state}>
       <AppDispatchContext.Provider value={dispatch}>

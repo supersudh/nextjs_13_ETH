@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useAccount } from 'wagmi'
 
 import './Dashboard.scss';
@@ -9,7 +9,7 @@ import DataTable from '../../../../components/DataTable';
 import { fetchTransactions } from '../../../../lib/Data';
 
 function DashboardRenderer({ children }) {
-  return <div className="Dashboard">{children}</div>
+  return <div className="Dashboard" data-testid="Dashboard">{children}</div>
 }
 
 export default function Dashboard() {
@@ -47,10 +47,10 @@ export default function Dashboard() {
 
   return (
     <DashboardRenderer>
-      <div>
-        <p>You are not connected to a wallet...</p>
-        <p>Click on a provider above to establish connection.</p>
-      </div>
+      <section className="dashboard-not-connected" data-testid="dashboard-not-connected-t">
+        <p className="dnc-msg-1">You are not connected to a wallet...</p>
+        <p className="dnc-msg-2">Click on a provider above to establish connection.</p>
+      </section>
     </DashboardRenderer>
   );
 }

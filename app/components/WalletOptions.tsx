@@ -20,7 +20,14 @@ function WalletOption({
   }, [connector])
 
   return (
-    <Button disabled={!ready} onClick={onClick} variant="contained" color="primary" style={{ margin: '0.25rem' }}>
+    <Button
+      id={`connect-btn-${connector.name}`}
+      disabled={!ready}
+      onClick={onClick}
+      variant="contained"
+      color="primary"
+      style={{ margin: '0.25rem' }}
+    >
       {connector.name}
     </Button>
   );

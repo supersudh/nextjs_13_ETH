@@ -57,12 +57,16 @@ export default function Profile() {
   const { disconnect } = useDisconnect();
   const { data: ensName } = useEnsName({ address });
   const { data: ensAvatar } = useEnsAvatar({ name: ensName! });
-
   return (
     <div>
       {ensAvatar && <img alt="ENS Avatar" src={ensAvatar} />}
       <ChainDetails chain={chain} chainId={chainId} />
-      <div data-testid="addressInfo">Address: <b>{address}</b></div>
+      <div
+        data-testid="addressInfo"
+        data-cy="addressInfo"
+      >
+        Address: <b>{address}</b>
+      </div>
       <Button
         variant="outlined"
         color="error"
